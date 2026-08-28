@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 
 export function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true);
-  const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
     // Total duration 1.8 seconds for a premium, fast loading feel
@@ -27,57 +26,39 @@ export function LoadingScreen() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5, ease: "easeOut" }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-purple-accent/5 rounded-full blur-[80px] pointer-events-none"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[300px] bg-purple-accent/5 rounded-full blur-[80px] pointer-events-none"
           />
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="relative flex flex-col items-center z-10"
           >
-            <div className="relative flex justify-center items-center py-4 px-8 overflow-hidden min-h-[120px]">
-              {/* Localized subtle purple glow directly behind the logo */}
-              <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4, duration: 1, ease: "easeOut" }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-purple-accent/15 blur-[20px] rounded-full z-0"
-              />
-              
-              {!imageError ? (
-                <img 
-                  src="/logo.png" 
-                  alt="Rareonix Media Logo" 
-                  onError={() => setImageError(true)}
-                  className="relative z-10 w-[75px] md:w-[100px] h-auto object-contain"
-                />
-              ) : (
-                <h1 className="relative z-10 text-2xl md:text-3xl font-light tracking-[0.2em] text-gray-900">
-                  Rareonix Media
-                </h1>
-              )}
+            {/* Localized subtle purple glow directly behind the text */}
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2, duration: 1, ease: "easeOut" }}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-24 bg-purple-accent/10 blur-[30px] rounded-full z-0"
+            />
+            
+            <div className="relative py-6 px-10 overflow-hidden text-center flex flex-col items-center justify-center z-10">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-light tracking-wide text-gray-900 mb-3">
+                Rareonix Media
+              </h1>
+              <p className="text-[10px] md:text-xs text-gray-500 font-light tracking-widest uppercase">
+                We Create Content That Grows Brands.
+              </p>
               
               {/* Soft shimmer/light sweep */}
               <motion.div
                 initial={{ left: '-100%' }}
                 animate={{ left: '200%' }}
-                transition={{ duration: 1.2, delay: 0.3, ease: "easeInOut" }}
-                className="absolute top-0 bottom-0 w-[100px] bg-gradient-to-r from-transparent via-white/80 to-transparent skew-x-[-25deg] z-20 pointer-events-none"
+                transition={{ duration: 1.5, delay: 0.2, ease: "easeInOut" }}
+                className="absolute top-0 bottom-0 w-[120px] bg-gradient-to-r from-transparent via-white/80 to-transparent skew-x-[-25deg] z-20 pointer-events-none"
               />
             </div>
-            
-            {/* Show the text below the logo ONLY if the image loaded successfully (so we don't duplicate the text) */}
-            {!imageError && (
-              <motion.h1 
-                initial={{ opacity: 0, y: 5 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                className="mt-2 text-lg md:text-xl font-light tracking-[0.2em] text-gray-900"
-              >
-                Rareonix Media
-              </motion.h1>
-            )}
           </motion.div>
         </motion.div>
       )}
