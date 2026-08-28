@@ -1,0 +1,6 @@
+{
+  "name": "Rareonix Media",
+  "description": "Premium creative agency landing page for Rareonix Media focusing on video editing, content creation, and digital growth.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
