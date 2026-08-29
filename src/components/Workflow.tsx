@@ -32,6 +32,7 @@ export function Workflow() {
           animate={{ opacity: [0.4, 0.7, 0.4], scale: [0.95, 1.05, 0.95] }}
           transition={{ repeat: Infinity, duration: 12, ease: "easeInOut" }}
           className="absolute inset-0 bg-purple-accent/10 rounded-full blur-[120px]"
+          style={{ willChange: 'transform, opacity' }}
         />
       </div>
 

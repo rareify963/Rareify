@@ -55,7 +55,7 @@ export function Hero() {
               }}
               transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
               className="absolute inset-0 z-10"
-              style={{ transformStyle: 'preserve-3d' }}
+              style={{ transformStyle: 'preserve-3d', willChange: 'transform' }}
             >
               <div className="w-full h-full bg-white/90 backdrop-blur-2xl border border-gray-100 rounded-[1.5rem] shadow-[30px_50px_80px_-20px_rgba(0,0,0,0.15),_0_0_40px_rgba(147,51,234,0.15)] flex flex-col p-2 overflow-hidden relative">
                 {/* Subtle inner reflection on the bezel */}
@@ -123,9 +123,10 @@ export function Hero() {
                         {[...Array(24)].map((_, i) => (
                           <motion.div 
                             key={i}
-                            animate={{ height: ["20%", `${Math.random() * 50 + 20}%`, "20%"] }}
+                            animate={{ scaleY: [0.2, Math.random() * 0.5 + 0.2, 0.2] }}
                             transition={{ repeat: Infinity, duration: Math.random() * 1.5 + 0.8, ease: "easeInOut" }}
-                            className="w-[1.5px] bg-gray-300 rounded-full"
+                            className="w-[1.5px] bg-gray-300 rounded-full h-full origin-center"
+                            style={{ willChange: 'transform' }}
                           />
                         ))}
                       </div>
@@ -133,9 +134,10 @@ export function Hero() {
                         {[...Array(18)].map((_, i) => (
                           <motion.div 
                             key={i}
-                            animate={{ height: ["20%", `${Math.random() * 60 + 20}%`, "20%"] }}
+                            animate={{ scaleY: [0.2, Math.random() * 0.6 + 0.2, 0.2] }}
                             transition={{ repeat: Infinity, duration: Math.random() * 1.5 + 0.8, ease: "easeInOut" }}
-                            className="w-[1.5px] bg-purple-accent/40 rounded-full"
+                            className="w-[1.5px] bg-purple-accent/40 rounded-full h-full origin-center"
+                            style={{ willChange: 'transform' }}
                           />
                         ))}
                       </div>
@@ -150,6 +152,7 @@ export function Hero() {
               animate={{ y: [-5, 5, -5] }}
               transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 0.5 }}
               className="absolute -top-4 -right-2 md:-right-8 z-20"
+              style={{ willChange: 'transform' }}
             >
               <div className="flex items-center gap-2 px-3.5 py-2 bg-white/90 backdrop-blur-md border border-black/5 rounded-full shadow-[0_8px_16px_-4px_rgba(0,0,0,0.1)] text-xs font-medium text-gray-700">
                 <Film size={14} className="text-purple-accent" />
@@ -161,6 +164,7 @@ export function Hero() {
               animate={{ y: [-7, 7, -7] }}
               transition={{ repeat: Infinity, duration: 6, ease: "easeInOut", delay: 1 }}
               className="absolute -bottom-6 -left-4 md:-left-8 z-20"
+              style={{ willChange: 'transform' }}
             >
               <div className="flex items-center gap-2 px-3.5 py-2 bg-white/90 backdrop-blur-md border border-black/5 rounded-full shadow-[0_8px_16px_-4px_rgba(0,0,0,0.1)] text-xs font-medium text-gray-700">
                 <Sparkles size={14} className="text-purple-accent" />
@@ -172,6 +176,7 @@ export function Hero() {
               animate={{ y: [-6, 6, -6] }}
               transition={{ repeat: Infinity, duration: 7, ease: "easeInOut", delay: 1.5 }}
               className="absolute bottom-6 -right-4 md:-right-10 z-20"
+              style={{ willChange: 'transform' }}
             >
               <div className="flex items-center gap-2 px-3.5 py-2 bg-white/90 backdrop-blur-md border border-black/5 rounded-full shadow-[0_8px_16px_-4px_rgba(0,0,0,0.1)] text-xs font-medium text-gray-700">
                 <Send size={14} className="text-purple-accent" />
