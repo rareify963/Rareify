@@ -40,7 +40,7 @@ export function Portfolio() {
             <iframe
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
               src="https://www.youtube.com/embed/nuewWhuhYTE?rel=0&showinfo=0&modestbranding=1"
-              title="Rareonix Media Portfolio Reel"
+              title="Intro Rareonix Media"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

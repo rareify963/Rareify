@@ -1,4 +1,4 @@
-import { Instagram, Facebook, Mail, MessageCircle } from 'lucide-react';
+import { Instagram, Mail, MessageCircle } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -42,9 +42,6 @@ export function Footer() {
             </a>
             <a href="https://www.instagram.com/rareify_/?hl=en" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-black/5 border border-black/10 flex items-center justify-center text-gray-500 hover:text-purple-accent hover:bg-purple-accent/10 transition-colors shadow-sm" aria-label="Instagram">
               <Instagram size={18} />
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=61586961090924" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-black/5 border border-black/10 flex items-center justify-center text-gray-500 hover:text-purple-accent hover:bg-purple-accent/10 transition-colors shadow-sm" aria-label="Facebook">
-              <Facebook size={18} />
             </a>
             <button type="button" onClick={(e) => e.preventDefault()} className="w-10 h-10 rounded-full bg-black/5 border border-black/10 flex items-center justify-center text-gray-500 hover:text-purple-accent hover:bg-purple-accent/10 transition-colors shadow-sm cursor-default" aria-label="TikTok (Coming Soon)">
               <TikTokIcon className="w-[18px] h-[18px]" />
